@@ -66,7 +66,7 @@ export default function CategoryAndToics() {
   const [name, setName] = useState("");
   const [id, setId] = useState("");
 
-  console.log("topics", message);
+  console.log("categories", categories);
 
   const handleClose = () => {
     setOpen(false);
@@ -88,6 +88,9 @@ export default function CategoryAndToics() {
   const topicOptions = categories?.map((category) => {
     return { id: category.id, label: category.name };
   });
+
+  console.log("topicOptions", topicOptions);
+
 
   const handleSelector = (option) => {
     console.log("Selected option", option);
@@ -152,7 +155,6 @@ export default function CategoryAndToics() {
                       options={topicOptions}
                       onChange={handleSelector}
                       value={selectedOption}
-                      style={{ width: "100% !importtant" }}
                     />
 
                     <div>

@@ -75,7 +75,7 @@ const Home = () => {
   };
 
   const getAllCategoryData = async () => {
-    const response = await dispatch(getAllCategory(token));
+    const response = await dispatch(getAllCategory("1", token));
     // console.log("getAllCategoryData", response);
     setCategories(response?.data?.data);
   };
@@ -88,6 +88,9 @@ const Home = () => {
     console.log("Selected option", option);
     setselectedOption(option);
   };
+
+  console.log("categories", categories);
+  console.log("categoryOptions", categoryOptions);
 
   useEffect(() => {
     getAllCategoryData();
